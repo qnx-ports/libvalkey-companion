@@ -3,7 +3,7 @@
 # Maintainer: jscaffidi <jscaffidi@qnx.com>
 pkgname=libvalkey
 pkgver=0.2.1
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Valkey client library in C"
 url="https://github.com/valkey-io/libvalkey"
 arch="all"
@@ -50,6 +50,7 @@ tls() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 7dd42c109d699e51dc0c5d392a74a8c11fbfefef66485deed89a7ba1e2df24c5f3d614785581a825fbe75dc1ca0a49dd2f5467ade7c548c7c96a2b2044a7843a  libvalkey-0.2.1.tar.gz
 25c07fec98e6f4c62c08ad9e45df896d97cb7b8c6f53aa13ff851b0d50066da7294750a995ffa8583960e3459aeb83c89dc15d5cc50d303fda14acd34cfacbd2  fix-test.patch
